@@ -3,33 +3,79 @@
 {% block content %}
   <main class="container signup-section">
     <div class="section-content">
-      <h2>Check loan Eligibitly</h2>
+      <h2>Check Price change sign </h2>
 
       <form method="POST" action="/classification">
         {{ form.hidden_tag() }}
 
         <div class="form-group">
-          {{ form.amount_requested.label }}
-          {{ form.amount_requested }}
+          {{ form.cost-per-transaction.label }}
+          {{ form.cost-per-transaction }}
         </div>
 
         <div class="form-group">
-          {{ form.zip_code.label }}
-          {{ form.zip_code }}
+          {{ form.difficulty.label }}
+          {{ form.difficulty }}
         </div>
 
         <div class="form-group">
-          {{ form.employment_length.label }}
-          {{ form.employment_length }}
+          {{ form.estimated-transaction-volume.label }}
+          {{ form.estimated-transaction-volume }}
         </div>
         <div class="form-group">
-          {{ form.risk_score.label }}
-          {{ form.risk_score }}
+          {{ form.hash-rate.label }}
+          {{ form.hash-rate }}
         </div>
         <div class="form-group">
-          {{ form.debt_to_income_ratio.label }}
-          {{ form.debt_to_income_ratio }}
+          {{ form.market-cap.label }}
+          {{ form.market-cap }}
         </div>
+        <div class="form-group">
+          {{ form.median-confirmation-time.label }}
+          {{ form.median-confirmation-time }}
+        </div>
+        <div class="form-group">
+          {{ form.miners-revenue.label }}
+          {{ form.miners-revenue }}
+        </div>
+        <div class="form-group">
+          {{ form.n-orphaned-blocks.label }}
+          {{ form.n-orphaned-blocks }}
+        </div>
+        <div class="form-group">
+          {{ form.n-transactions.label }}
+          {{ form.n-transactions }}
+        </div>
+        <div class="form-group">
+          {{ form.n-transactions-per-block.label }}
+          {{ form.n-transactions-per-block }}
+        </div>
+          <div class="form-group">
+          {{ form.n-unique-addresses.label }}
+          {{ form.n-unique-addresses }}
+        </div>
+        <div class="form-group">
+          {{ form.total-bitcoins.label }}
+          {{ form.total-bitcoins }}
+        </div>
+        <div class="form-group">
+          {{ form.transaction-fees.label }}
+          {{ form.transaction-fees }}
+        </div>
+          <div class="form-group">
+          {{ form.avg-block-size.label }}
+          {{ form.avg-block-size }}
+        </div>
+        <div class="form-group">
+          {{ form.transaction_to_trade_ratio_D.label }}
+          {{ form.transaction_to_trade_ratio_D }}
+        </div>
+        <div class="form-group">
+          {{ form.up_down_same.label }}
+          {{ form.up_down_same }}
+        </div>
+
+        
 
         {{ form.submit(class="btn-primary") }}
 
