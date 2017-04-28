@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="about-section">
+    <div class="container">
+
+    <h2>Get Bitcoin Price</h2>
+    
+    <div class="btn-group" role="group" aria-label="Basic example">
+     <button id="sample1" class="btn-primary" >Fill form -Sample1</button>
+     <button id="sample2" class="btn-primary" >Fill form -Sample2</button>
+     <button id="sample3" class="btn-primary" >Fill form -Sample3</button>
+ </div>
+    <main class="container signup-section">
+    <div class="section-content">
+      
+
+      <form method="POST" action="/success" id="MyForm">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+        	
+          {{ form.width.label }}
+          {{ form.width }}
+        </div>
+        <div class="form-group">
+          {{ form.mid.label }}
+          {{ form.mid}}
+        </div>
+
+        <div class="form-group">
+          {{ form.mid30.label }}
+          {{ form.mid30 }}
+        </div>
+
+        <div class="form-group">
+          {{ form.imbalance2.label }}
+          {{ form.imbalance2 }}
+        </div>
+        <div class="form-group">
+          {{ form.adj_price2.label }}
+          {{ form.adj_price2 }}
+        </div>
+        <div class="form-group">
+          {{ form.imbalance4.label }}
+          {{ form.imbalance4 }}
+        </div>
+
+
+        <div class="form-group">
+          {{ form.adj_price4.label }}
+          {{ form.adj_price4 }}
+        </div>
+        <div class="form-group">
+          {{ form.imbalance8.label }}
+          {{ form.imbalance8 }}
+        </div>
+        <div class="form-group">
+          {{ form.adj_price8.label }}
+          {{ form.adj_price8 }}
+        </div>
+        <div class="form-group">
+          {{ form.t30_count.label }}
+          {{ form.t30_count }}
+        </div>
+        <div class="form-group">
+          {{ form.t30_av.label }}
+          {{ form.t30_av }}
+        </div>
+        <div class="form-group">
+          {{ form.agg30.label }}
+          {{ form.agg30 }}
+        </div>
+        <div class="form-group">
+          {{ form.trend30.label }}
+          {{ form.trend30 }}
+        </div>
+        <div class="form-group">
+          {{ form.t60_count.label }}
+          {{ form.t60_count }}
+        </div>
+        <div class="form-group">
+          {{ form.t60_av.label }}
+          {{ form.t60_av }}
+        </div>
+        <div class="form-group">
+          {{ form.agg60.label }}
+          {{ form.agg60 }}
+        </div>
+        <div class="form-group">
+          {{ form.trend60.label }}
+          {{ form.trend60 }}
+        </div>
+        <div class="form-group">
+          {{ form.t120_count.label }}
+          {{ form.t120_count }}
+        </div>
+        <div class="form-group">
+          {{ form.t120_av.label }}
+          {{ form.t120_av }}
+        </div>
+        <div class="form-group">
+          {{ form.agg120.label }}
+          {{ form.agg120 }}
+        </div>
+        <div class="form-group" >
+          {{ form.trend120.label }}
+          {{ form.trend120 }}
+        </div>
+        <div class="form-group">
+          {{ form.t180_count.label }}
+          {{ form.t180_count }}
+        </div>
+        <div class="form-group">
+          {{ form.t180_av.label }}
+          {{ form.t180_av }}
+        </div>
+        <div class="form-group">
+          {{ form.agg180.label }}
+          {{ form.agg180 }}
+        </div>
+        <div class="form-group" >
+          {{ form.trend180.label }}
+          {{ form.trend180 }}
+        </div>
+
+        {{ form.submit(class="btn-primary") }}
+
+      </form>
+
+    </div>
+
+	</main>
+
+  	
+
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+	function populate(frm, data) {
+	  $.each(data, function(key, value){
+	    $('[name='+key+']', frm).val(value);
+	  });
+	}
+data1 = { "grade ": "B",
+"total_pymnt_inv ": "4066.91",
+"revol_util ": "53.9",
+"fico_range_grade ": "Fair",
+"loan_status ": "Fully Paid",
+"total_rec_prncp ": "3000",
+"revol_bal ": "27783",
+"grade_based_on_inq_last_6mths ": "A",
+"acc_open_past_24mths ": "0",
+"installment ": "67.79",
+"last_pymnt_amnt ": "67.3",
+"funded_amnt_inv ": "3000",
+"total_acc ": "38",
+"issue_d ": "2011",
+"credit_age ": "21",
+"annual_inc ": "80000",
+"meanfico ": "697",
+"cluster ": "1" ,
+"actual_rate_interest":"12.69"};
+
+data2 = { "grade":"C",
+"total_pymnt_inv":"12231.89",
+"revol_util":"21.0",
+"fico_range_grade":"Fair",
+"loan_status":"Fully Paid",
+"total_rec_prncp":"10000",
+"revol_bal":"5598",
+"grade_based_on_inq_last_6mths":"B",
+"acc_open_past_24mths":"0",
+"installment":"339.31",
+"last_pymnt_amnt":"357.48",
+"funded_amnt_inv":"10000",
+"total_acc":"37",
+"issue_d":"2011",
+"credit_age":"20",
+"annual_inc":"49200",
+"meanfico":"692",
+"cluster":"5",
+"actual_rate_interest":"13.49"};
+data3={
+"grade":"C",
+"total_pymnt_inv":"1014.53",
+"revol_util":"9.4",
+"fico_range_grade":"Good",
+"loan_status":"Charged Off",
+"total_rec_prncp":"456",
+"revol_bal":"1687",
+"grade_based_on_inq_last_6mths":"C",
+"acc_open_past_24mths":"0",
+"installment":"59.83",
+"last_pymnt_amnt":"119.66",
+"funded_amnt_inv":"2500",
+"total_acc":"4",
+"issue_d":"2011",
+"credit_age":"17",
+"annual_inc":"30000",
+"meanfico":"742",
+"cluster":"3",
+"actual_rate_interest":"15.27"
+};
+	$( document ).ready(function() {
+	$("#sample1").click(function(){
+       populate('#MyForm', data1);
+    });
+    $("#sample2").click(function(){
+       populate('#MyForm', data2);
+    });
+    $("#sample3").click(function(){
+       populate('#MyForm', data3);
+    });
+		
+    	console.log( "ready!" );
+	});
+	
+  </script>
+{% endblock %}
