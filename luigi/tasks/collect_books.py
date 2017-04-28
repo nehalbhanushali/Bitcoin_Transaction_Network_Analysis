@@ -41,7 +41,7 @@ class DownloadBookData(luigi.Task):
 
 
         print ('Running...')
-        while True:
+        for i in range(10):
             start = time.time()
             try:
                 book, code = get_json(book_url)

@@ -7,8 +7,8 @@ import luigi
 import collect_books
 
 class DownloadTradeData(luigi.Task):
-    # def requires(self):
-    #     return collect_books.DownloadBookData()
+    def requires(self):
+        return collect_books.DownloadBookData()
 
     def run(self):
 
