@@ -5,6 +5,8 @@ from forms import SignupForm, LoginForm, AddressForm,ClassifcationForm,Regressio
 
 import urllib2
 import json
+from data_parser import BTCNetwork
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, jsonify
 
 
 from models import db, User, Place
@@ -16,14 +18,12 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
 
-
+app.config.from_object(__name__)
 db.init_app(app)
-
 app.secret_key = "development-key"
 
-@app.route("/")
-def index():
-  return render_template("index.html")
+
+
 
 
 @app.route("/regression", methods=["GET", "POST"])
@@ -305,33 +305,36 @@ def classification():
     return render_template('classification.html', form=form)
 
 
-@app.route("/home", methods=["GET", "POST"])
+@app.route("/")
 def home():
-  if 'email' not in session:
-    return redirect(url_for('login'))
+    return render_template('index.html', context={})
 
-  form = AddressForm()
+@app.route("/get_btn", methods=['POST'])
+def get_btn():
+    btn_address = request.form['btn_address']
 
-  places = []
-  my_coordinates = (53.2734, -7.778320310000026)
+    if not btn_address:
+        flash('Please enter a valid bitcoin address')
+        return redirect(url_for('home'))
 
-  if request.method == 'POST':
-    if form.validate() == False:
-      return render_template('home.html', form=form)
-    else:
-      # get the address
-      address = form.address.data 
+    btc = BTCNetwork()
+    data = btc.data_parse(origin=btn_address)
 
-      # query for places around it
-      p = Place()
-      my_coordinates = p.address_to_latlng(address)
-      places = p.query(address)
+    return jsonify(nodes=data[0], links=data[1])
 
-      # return those results
-      return render_template('home.html', form=form, my_coordinates=my_coordinates, places=places)
+@app.route("/get_cluster", methods=['POST'])
+def get_cluster():
+    origin = request.form['origin_addr']
 
-  elif request.method == 'GET':
-    return render_template("home.html", form=form, my_coordinates=my_coordinates, places=places)
+    if not origin:
+        flash('Please enter a valid bitcoin address')
+        return redirect(url_for('home'))
+
+    btc = BTCNetwork()
+    nodes, links = btc.data_parse(origin=origin)
+
+    clustered_nodes, clustered_links, number_of_clusters = btc.data_clust(origin, nodes, links)
+    return jsonify(nodes=clustered_nodes, links=clustered_links, number_of_clusters=number_of_clusters)
 
 
 

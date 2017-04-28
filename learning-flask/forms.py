@@ -1,4 +1,3 @@
-# ! pip install flask_wtf
 from flask_wtf import Form
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
@@ -21,26 +20,12 @@ class AddressForm(Form):
 
 
 class ClassifcationForm(Form):
-
-  avg-block-size = StringField('avg-block-size', validators=[DataRequired("Please enter avg-block-size.")])
-  cost-per-transaction = StringField('cost-per-transaction', validators=[DataRequired("Please enter cost-per-transaction.")])
-  difficulty = StringField('difficulty', validators=[DataRequired("Please enter difficulty.")])
-  estimated-transaction-volume = StringField('estimated-transaction-volume', validators=[DataRequired("Please enter estimated-transaction-volume.")])
-  hash-rate = StringField('hash-rate', validators=[DataRequired("Please enter hash-rate.")])
-  market-cap = StringField('market-cap', validators=[DataRequired("Please enter market-cap.")])
-  median-confirmation-time = StringField('median-confirmation-time', validators=[DataRequired("Please enter median-confirmation-time.")])
-  miners-revenue = StringField('miners-revenue', validators=[DataRequired("Please enter miners-revenue.")])
-  n-orphaned-blocks = StringField('n-orphaned-blocks', validators=[DataRequired("Please enter n-orphaned-blocks.")])
-  n-transactions = StringField('n-transactions', validators=[DataRequired("Please enter n-transactions.")])
-  n-transactions-per-block = StringField('n-transactions-per-block', validators=[DataRequired("Please enter n-transactions-per-block.")])
-  n-unique-addresses = StringField('n-unique-addresses', validators=[DataRequired("Please enter n-unique-addresses.")])
-  total-bitcoins = StringField('total-bitcoins', validators=[DataRequired("Please enter total-bitcoins.")])
-  transaction-fees = StringField('transaction-fees', validators=[DataRequired("Please enter transaction-fees.")])
-  transaction_to_trade_ratio_D = StringField('transaction_to_trade_ratio_D', validators=[DataRequired("Please enter transaction_to_trade_ratio_D.")])
-  up_down_same = StringField('up_down_same', validators=[DataRequired("Please enter up_down_same.")])
-
-  submit = SubmitField("Check sign of price change")
- 
+  amount_requested = StringField('Loan Amount', validators=[DataRequired("Please enter your loan amount.")])
+  zip_code = StringField('Zip Code', validators=[DataRequired("Please enter a zip code.")])
+  employment_length = StringField('Employment Length', validators=[DataRequired("Please enter a employment length")])
+  risk_score = StringField('Risk Score', validators=[DataRequired("Please enter a credit score")])
+  debt_to_income_ratio = StringField('Debt to Income Ratio', validators=[DataRequired("Please enter a credit score")])
+  submit = SubmitField("Check loan eligibilty")
 
 
 class RegressionForm(Form):
