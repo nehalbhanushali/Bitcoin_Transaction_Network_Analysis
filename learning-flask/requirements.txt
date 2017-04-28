@@ -1,4 +1,4 @@
-
+python-louvain
 ratelim==0.1.6
 requests==2.7.0
 six==1.9.0
@@ -32,8 +32,5 @@ decorator==4.0.2
 geocoder==1.4.1
 gunicorn==19.3.0
 itsdangerous==0.24
-ratelim==0.1.6
-requests==2.7.0
-six==1.9.0
 
 
