@@ -289,12 +289,12 @@ def classification():
         result = response.read()
         resp_dict = json.loads(result)
         print(result)
-        loaneligibilty=resp_dict['Results']['output1'][0]['Scored Labels']
+        signOfPriceChange=resp_dict['Results']['output1'][0]['Scored Labels']
         
-        print(loaneligibilty)
+        print(signOfPriceChange)
         c= Classifcation()
         print(c)
-        status=c.get_status(loaneligibilty)
+        status=c.get_status(signOfPriceChange)
       except urllib2.HTTPError, error:
         print("The request failed with status code: " + str(error.code))
 
@@ -302,10 +302,10 @@ def classification():
         print(error.info())
         print(json.loads(error.read()))
       #return  redirect(url_for('success'))
-      if(status=='Accepted'):
-        return redirect(url_for('success'))
+      if(status=='Increase'):
+        return redirect(url_for('increase'))
       else:
-        return redirect(url_for('fetch'))
+        return redirect(url_for('decrease'))
 
 
   elif request.method == 'GET':

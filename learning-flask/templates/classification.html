@@ -5,6 +5,12 @@
     <div class="section-content">
       <h2>Check sign of price change</h2>
 
+      <div class="btn-group" role="group" aria-label="Basic example">
+     <button id="sample1" class="btn-primary" >Fill form -Sample1</button>
+     <button id="sample2" class="btn-primary" >Fill form -Sample2</button>
+     <button id="sample3" class="btn-primary" >Fill form -Sample3</button>
+     </div>
+
       <form method="POST" action="/classification">
         {{ form.hidden_tag() }}
 
@@ -78,4 +84,94 @@
       </form>
     </div>
   </main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>
+	function populate(frm, data) {
+	  $.each(data, function(key, value){
+	    $('[name='+key+']', frm).val(value);
+	  });
+	}
+data1 = {
+'Column 0': "1",   
+"avg-block-size" : "0.967617979592",
+"cost-per-transaction" : "9.457037685",
+"difficulty" : "521839702599.0",
+"estimated-transaction-volume" : "299790.688729",
+"estimated-transaction-volume-usd" : "403324576.013",
+"hash-rate" : "3814281.6337",
+"market-cap" : "21926056741.3",
+// "market-price" : "1345.3539125",
+"median-confirmation-time" : "20.25",
+"miners-revenue" : "2725014.34977",
+"n-orphaned-blocks" : "0.0",
+"n-transactions" : "297884.0",
+"n-transactions-per-block" : "2026.42176871",
+"n-unique-addresses" : "554691.0",
+"total-bitcoins" : "16297612.5",
+"transaction-fees" : "256.44731571",
+"transaction_to_trade_ratio_D": "",
+"up_down_same": "0"
+}
+
+
+
+data2 = {
+'Column 0': "1",
+"avg-block-size" : "0.966010324324",
+"cost-per-transaction" : "8.34219325569",
+"difficulty" : "520808749422.0",
+"estimated-transaction-volume" : "306659.177474",
+"estimated-transaction-volume-usd" : "392344255.717",
+"hash-rate" : "3831652.41717",
+"market-cap" : "20846606998.6",
+// "market-price" : "1279.4146875",
+"median-confirmation-time" : "24.675",
+"miners-revenue" : "2615123.62125",
+"n-orphaned-blocks" : "0.0",
+"n-transactions" : "325387.0",
+"n-transactions-per-block" : "2198.56081081",
+"n-unique-addresses" : "580200.0",
+"total-bitcoins" : "16293862.5",
+"transaction-fees" : "271.62738431",
+"transaction_to_trade_ratio_D": "",
+"up_down_same": "0"
+};
+data3={
+'Column 0': "1",  
+"avg-block-size" : "0.947631065359",
+"cost-per-transaction" : "11.5206570483",
+"difficulty" : "520808749422.0",
+"estimated-transaction-volume" : "159473.77434",
+"estimated-transaction-volume-usd" : "216214543.25",
+"hash-rate" : "3961100.13396",
+"market-cap" : "22086609057.5",
+// "market-price" : "1257.9881125",
+"median-confirmation-time" : "14.3",
+"miners-revenue" : "2732614.9",
+"n-orphaned-blocks" : "0.0",
+"n-transactions" : "245039.0",
+"n-transactions-per-block" : "1601.5620915",
+"n-unique-addresses" : "490003.0",
+"total-bitcoins" : "16290462.5",
+"transaction-fees" : "169.67309519",
+"transaction_to_trade_ratio_D": "",
+"up_down_same": "0"
+};
+	$( document ).ready(function() {
+	$("#sample1").click(function(){
+       populate('#MyForm', data1);
+    });
+    $("#sample2").click(function(){
+       populate('#MyForm', data2);
+    });
+    $("#sample3").click(function(){
+       populate('#MyForm', data3);
+    });
+		
+    	console.log( "ready!" );
+	});
+	
+  </script>
+
+
 {% endblock %}

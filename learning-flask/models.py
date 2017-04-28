@@ -31,13 +31,13 @@ class User(db.Model):
 class Classifcation(object):
 
 
-  def get_status(self, loaneligibilty):
-    self.loaneligibilty = loaneligibilty.title()
-    if(self.loaneligibilty=='1'):
-      status="Declined"
+  def get_status(self, signOfPriceChange):
+    self.signOfPriceChange = signOfPriceChange.title()
+    if(self.signOfPriceChange=='1'):
+      status="Increase"
     
     else:
-      status="Accepted"
+      status="Decrease"
 
     return status
 

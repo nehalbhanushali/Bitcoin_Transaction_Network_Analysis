@@ -1,0 +1,14 @@
+
+
+$ javac -classpath ../hadoop-0.20.2-core.jar -d BTC_classes BTCMapper1.java BTCReducer1.java BTCDriver1.java
+
+$ jar cvf BTC.jar -C BTC_classes/ .
+
+$ ../bin/hadoop jar BTC.jar U.CC.BTCDriver1 input_edges input_user_keys int_op
+
+
+$ javac -classpath ../../hadoop-0.20.2-core.jar -d risk_classes FriendsRiskMapper2.java FriendsRiskReducer2.java FriendsRiskDriver2.java
+
+$ jar cvf risk.jar -C risk_classes/ .
+
+$ ../../bin/hadoop jar risk.jar U.CC.FriendsRiskDriver2 friendlist_output friend_risk_output
