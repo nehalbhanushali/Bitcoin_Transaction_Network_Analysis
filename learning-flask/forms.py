@@ -1,4 +1,3 @@
-# ! pip install flask_wtf
 from flask_wtf import Form
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
@@ -22,6 +21,7 @@ class AddressForm(Form):
 
 class ClassifcationForm(Form):
 
+
   avg_block_size = StringField('avg_block_size', validators=[DataRequired("Please enter avg_block_size.")])
   cost_per_transaction = StringField('cost_per_transaction', validators=[DataRequired("Please enter cost_per_transaction.")])
   difficulty = StringField('difficulty', validators=[DataRequired("Please enter difficulty.")])
@@ -40,7 +40,6 @@ class ClassifcationForm(Form):
   up_down_same = StringField('up_down_same', validators=[DataRequired("Please enter up_down_same.")])
 
   submit = SubmitField("Check sign of price change")
- 
 
 
 class RegressionForm(Form):
