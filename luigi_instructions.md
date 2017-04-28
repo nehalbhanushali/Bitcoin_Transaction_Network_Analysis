@@ -1,13 +1,16 @@
-`python -m luigi --module merge_accepted_loans MergeDataDownloaded --local-scheduler`
-
-`python3 -m luigi --module download_accepted_loans  DownloadLendingClubDataSet  --local-scheduler`
+`python -m luigi --module collect_books  DownloadBookData  --local-scheduler`
 
 
-Pipeline- Accepted and Declined loans
-The luigi pipline id divided in 4 tasks:
-1. DownloadLendingClubDataSet- Using mechanical soup login happens, then the values from dropdown are extracted to download files. The output is directed using luigi folder.
-2. MergeDataDownloaded -The downloaded data is now merged to create a dataframe. Due to memmory constraints on docker the downloaded files once merge are deleted. 
-3. HandleMissingData- this luigi task handles missing data and does feture engineering to derive new features. The clean file is saved to disk. The format is gzip due to memory constraints of docker.
+
+
+Pipeline- To Download data and Process it. Data is downloaded from bitfinex. From two rest api one is books and other is trade api.
+The luigi pipline id divided in 3 tasks:
+1. DownloadBookData- Data is downloaded from `https://api.bitfinex.com/v1\btc\book\usd`
+2. DownloadTradeData -Data is downloaded from `https://api.bitfinex.com/v1\btc\trade\usd` 
+
+Downloaded data is stored in MongoDB
+
+3. DataCleaningAndParsing- Data downloaded from rest api's is in json format. It is parsed to extract revlant fields and stored in processed csv file
 4. UploadDataToS3- This task uploads processed file to S3 bucket.
 
 
