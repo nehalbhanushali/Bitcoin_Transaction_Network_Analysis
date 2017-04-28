@@ -251,22 +251,23 @@ def classification():
                   "input1":
                   [
                       {
-                              'avg_block_size': avg_block_size,
-                              'cost_per_transaction': cost_per_transaction,
+                              'Column 0': "1",   
+                              'avg-block-size': avg_block_size,
+                              'cost-per-transaction': cost_per_transaction,
                               'difficulty': difficulty,
-                              'estimated_transaction_volume': estimated_transaction_volume,
-                              'hash_rate': hash_rate,
-                              'market_cap': market_cap,
-                              'median_confirmation_time': median_confirmation_time,
-                              'miners_revenue': miners_revenue,
-                              'n_orphaned_blocks': n_orphaned_blocks,
-                              'n_transactions': n_transactions,
-                              'n_transactions_per_block': n_transactions_per_block,
-                              'n_unique_addresses': n_unique_addresses,
-                              'total_bitcoins': total_bitcoins,
-                              'transaction_fees': transaction_fees,
+                              'estimated-transaction-volume': estimated_transaction_volume,
+                              'hash-rate': hash_rate,
+                              'market-cap': market_cap,
+                              'median-confirmation-time': median_confirmation_time,
+                              'miners-revenue': miners_revenue,
+                              'n-orphaned-blocks': n_orphaned_blocks,
+                              'n-transactions': n_transactions,
+                              'n-transactions-per-block': n_transactions_per_block,
+                              'n-unique-addresses': n_unique_addresses,
+                              'total-bitcoins': total_bitcoins,
+                              'transaction-fees': transaction_fees,
                               'transaction_to_trade_ratio_D': transaction_to_trade_ratio_D,
-                              'up_down_same': "0"  
+                              'up_down_same': "0", 
                       }
                   ],
           },
@@ -276,8 +277,8 @@ def classification():
 
       body = str.encode(json.dumps(data))
 
-      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/26def98f77714c3da9112068a42595fd/execute?api-version=2.0&format=swagger'
-      api_key = '8aiAj7bczmiPgY+rHbyjf+eSZDxiKJyMot+NxVXIjRsTnIiVNh/p6gsP9jOm8uWHjNIoTtjh+dZ9nxAtn8HtNQ=='
+      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/debd1df031cf45c5aeee3d36941e28a1/execute?api-version=2.0&format=swagger'
+      api_key = '647UvHl1rMv71rlUWmXD/XmmSQmCmy2v0Mg7lI7dNNMKZkwGyp79SNAN7cP3/vvqhUMo3a6Tc9e3uWYFnD06OA=='
       headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
       req = urllib2.Request(url, body, headers)
