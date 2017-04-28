@@ -43,8 +43,9 @@ class ClassifcationForm(Form):
 
 
 class RegressionForm(Form):
+  id = StringField('ID')
   width = StringField('Width', validators=[DataRequired("Please enter a width")])
-  mid = StringField('Width', validators=[DataRequired("Please enter a width")])
+  mid = StringField('Mid Price', validators=[DataRequired("Please enter a width")])
   mid30 = StringField('enter Mid Price in last 30 seconds', validators=[DataRequired("Total Payment Inv")])
   imbalance2 = StringField('Imbalance 2 Power of 2', validators=[DataRequired("Please enter a Rovloving Utilization")])
   adj_price2 = StringField('Adjacent Price power of 2', validators=[DataRequired("Please enter a Loan Status")])

@@ -17,6 +17,11 @@
 
       <form method="POST" action="/success" id="MyForm">
         {{ form.hidden_tag() }}
+          <div class="form-group">
+          
+          {{ form.id.label }}
+          {{ form.id }}
+        </div>
 
         <div class="form-group">
         	
@@ -143,65 +148,91 @@
 	    $('[name='+key+']', frm).val(value);
 	  });
 	}
-data1 = { "grade ": "B",
-"total_pymnt_inv ": "4066.91",
-"revol_util ": "53.9",
-"fico_range_grade ": "Fair",
-"loan_status ": "Fully Paid",
-"total_rec_prncp ": "3000",
-"revol_bal ": "27783",
-"grade_based_on_inq_last_6mths ": "A",
-"acc_open_past_24mths ": "0",
-"installment ": "67.79",
-"last_pymnt_amnt ": "67.3",
-"funded_amnt_inv ": "3000",
-"total_acc ": "38",
-"issue_d ": "2011",
-"credit_age ": "21",
-"annual_inc ": "80000",
-"meanfico ": "697",
-"cluster ": "1" ,
-"actual_rate_interest":"12.69"};
+data1 =   {
+    "id": "1493266297.34",
+    "width": "0.7",
+    "mid": "1402.15",
+    "mid30": "-0.000213980029347",
+    "imbalance2": "1.19252281779",
+    "adj_price2": "0.00147024340227",
+    "imbalance4": "1.04138024247",
+    "adj_price4": "0.00174402620742",
+    "imbalance8": "1.02179712929",
+    "adj_price8": "0.00194924797377",
+    "t30_count": "4.0",
+    "t30_av": "0.000215905055326",
+    "agg30": "-1.76253862",
+    "trend30": "0.0023166023166",
+    "t60_count": "6.0",
+    "t60_av": "0.000196376083476",
+    "agg60": "-1.67092967",
+    "trend60": "-0.0350877192982",
+    "t120_count": "36.0",
+    "t120_av": "0.000106280831141",
+    "agg120": "-8.55954034",
+    "trend120": "-0.000945357692092",
+    "t180_count": "42.0",
+    "t180_av": "-2.38599092416e-07",
+    "agg180": "-8.13031802",
+    "trend180": "-0.00489846937083"
+  };
 
-data2 = { "grade":"C",
-"total_pymnt_inv":"12231.89",
-"revol_util":"21.0",
-"fico_range_grade":"Fair",
-"loan_status":"Fully Paid",
-"total_rec_prncp":"10000",
-"revol_bal":"5598",
-"grade_based_on_inq_last_6mths":"B",
-"acc_open_past_24mths":"0",
-"installment":"339.31",
-"last_pymnt_amnt":"357.48",
-"funded_amnt_inv":"10000",
-"total_acc":"37",
-"issue_d":"2011",
-"credit_age":"20",
-"annual_inc":"49200",
-"meanfico":"692",
-"cluster":"5",
-"actual_rate_interest":"13.49"};
+
 data3={
-"grade":"C",
-"total_pymnt_inv":"1014.53",
-"revol_util":"9.4",
-"fico_range_grade":"Good",
-"loan_status":"Charged Off",
-"total_rec_prncp":"456",
-"revol_bal":"1687",
-"grade_based_on_inq_last_6mths":"C",
-"acc_open_past_24mths":"0",
-"installment":"59.83",
-"last_pymnt_amnt":"119.66",
-"funded_amnt_inv":"2500",
-"total_acc":"4",
-"issue_d":"2011",
-"credit_age":"17",
-"annual_inc":"30000",
-"meanfico":"742",
-"cluster":"3",
-"actual_rate_interest":"15.27"
+    "id": "1493266746.05",
+    "width": "1.5",
+    "mid": "1398.55",
+    "mid30": "0.000750495898564",
+    "imbalance2": "3.62640929059",
+    "adj_price2": "0.00192534576705",
+    "imbalance4": "0.939304281322",
+    "adj_price4": "0.00221812915003",
+    "imbalance8": "-0.112379575677",
+    "adj_price8": "0.00234285704296",
+    "t30_count": "21.0",
+    "t30_av": "-0.000852551710645",
+    "agg30": "-4.87771808",
+    "trend30": "-0.0387212389381",
+    "t60_count": "23.0",
+    "t60_av": "-0.000896567985571",
+    "agg60": "-5.60995487",
+    "trend60": "-0.0259647232902",
+    "t120_count": "30.0",
+    "t120_av": "-0.00102094647314",
+    "agg120": "-11.30626516",
+    "trend120": "-0.012267858462",
+    "t180_count": "31.0",
+    "t180_av": "-0.00102148626805",
+    "agg180": "-11.31626516",
+    "trend180": "-0.0121684743884"
+  };
+  data2={
+  "id": "1492736072.66",
+  "width": "0.7",
+  "mid": "1309.95",
+  "mid30": "7.63358778997e-05",
+  "imbalance2": "1.93980491252",
+  "adj_price2": "0.00265301374598",
+  "imbalance4": "-0.987699357915",
+  "adj_price4": "0.00284104483811",
+  "imbalance8": "-1.54179414357",
+  "adj_price8": "0.00296726029111",
+  "t30_count": "0.0",
+  "t30_av": "0.0",
+  "agg30": "0.0",
+  "trend30": "0.0",
+  "t60_count": "0.0",
+  "t60_av": "0.0",
+  "agg60": "0.0",
+  "trend60": "0.0",
+  "t120_count": "2.0",
+  "t120_av": "0.00025356575465",
+  "agg120": "-0.4272059",
+  "trend120": "0.0",
+  "t180_count": "4.0",
+  "t180_av": "0.000146676822341",
+  "agg180": "-2.3316459",
+  "trend180": "-0.0102040816327"
 };
 	$( document ).ready(function() {
 	$("#sample1").click(function(){

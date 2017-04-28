@@ -41,6 +41,7 @@ def success():
       print('failed')
       return render_template('success.html', form=form)
     else:
+      id=form.id.data
       width = form.width.data 
       mid = form.mid.data
       mid30 = form.mid30.data
@@ -80,7 +81,7 @@ def success():
                       [
                           {
                                   'Column 0': "0",   
-                                  '_id': "1493266294.35",   
+                                  '_id': id,   
                                   'width': width,   
                                   'mid': mid,   
                                   'mid30': mid30,   
