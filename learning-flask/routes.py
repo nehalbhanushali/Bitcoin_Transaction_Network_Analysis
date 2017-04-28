@@ -158,18 +158,6 @@ def success():
 
 
 
-
-
-
-
-
-
-
-
-
-
-  
-
 @app.route("/about")
 def about():
   return render_template("about.html")
@@ -240,11 +228,22 @@ def classification():
       return render_template("classification.html", form=form)
     else:
 
-      amount_requested = form.amount_requested.data 
-      risk_score = form.risk_score.data
-      debt_to_income_ratio = form.debt_to_income_ratio.data
-      zip_code = form.zip_code.data
-      employment_length = form.employment_length.data
+      avg_block_size = form.avg_block_size.data
+      cost_per_transaction = form.cost_per_transaction.data
+      difficulty = form.difficulty.data
+      estimated_transaction_volume = form.estimated_transaction_volume.data
+      hash_rate = form.hash_rate.data
+      market_cap = form.market_cap.data
+      median_confirmation_time = form.median_confirmation_time.data
+      miners_revenue = form.miners_revenue.data
+      n_orphaned_blocks = form.n_orphaned_blocks.data
+      n_transactions = form.n_transactions.data
+      n_transactions_per_block = form.n_transactions_per_block.data
+      n_unique_addresses = form.n_unique_addresses.data
+      total_bitcoins = form.total_bitcoins.data
+      transaction_fees = form.transaction_fees.data
+      transaction_to_trade_ratio_D = form.transaction_to_trade_ratio_D.data
+      up_down_same = form.up_down_same.data
 
 
       data = {
@@ -252,15 +251,22 @@ def classification():
                   "input1":
                   [
                       {
-                              'Amount_Requested': amount_requested,   
-                              'Loan_Title': "1",   
-                              'Risk_Score': risk_score,   
-                              'Debt-To-Income_Ratio': "10",   
-                              'Zip_Code': zip_code,   
-                              'Employment_Length': employment_length,   
-                              'Policy_Code': "1",   
-                              'accept_reject_loan': "1",   
-                              'State': "1",   
+                              'avg_block_size': avg_block_size,
+                              'cost_per_transaction': cost_per_transaction,
+                              'difficulty': difficulty,
+                              'estimated_transaction_volume': estimated_transaction_volume,
+                              'hash_rate': hash_rate,
+                              'market_cap': market_cap,
+                              'median_confirmation_time': median_confirmation_time,
+                              'miners_revenue': miners_revenue,
+                              'n_orphaned_blocks': n_orphaned_blocks,
+                              'n_transactions': n_transactions,
+                              'n_transactions_per_block': n_transactions_per_block,
+                              'n_unique_addresses': n_unique_addresses,
+                              'total_bitcoins': total_bitcoins,
+                              'transaction_fees': transaction_fees,
+                              'transaction_to_trade_ratio_D': transaction_to_trade_ratio_D,
+                              'up_down_same': "0"  
                       }
                   ],
           },
@@ -270,8 +276,8 @@ def classification():
 
       body = str.encode(json.dumps(data))
 
-      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/9aab259ced0b46dc96788ef0708269be/execute?api-version=2.0&format=swagger'
-      api_key = 'yLH77qMmvFBxsqnSP37eIOEvk4wcV1CedkbwZOcptB92eOu48Gu6IQ9Hi7AQsurxpI82Qk+W+O89+sMyj1pvfw=='
+      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/26def98f77714c3da9112068a42595fd/execute?api-version=2.0&format=swagger'
+      api_key = '8aiAj7bczmiPgY+rHbyjf+eSZDxiKJyMot+NxVXIjRsTnIiVNh/p6gsP9jOm8uWHjNIoTtjh+dZ9nxAtn8HtNQ=='
       headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
       req = urllib2.Request(url, body, headers)

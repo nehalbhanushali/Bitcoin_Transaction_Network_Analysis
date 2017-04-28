@@ -1,7 +1,8 @@
-starting venv
+pip install virtualenv
+#starting venv
 virtualenv ENV
-source bin/activate
+source ENV/bin/activate
 
 
-Installing from requirement.txt
+#Installing from requirement.txt
 pip install -r requirements.txt
