@@ -8,22 +8,7 @@ ARG group=app
 ARG uid=2101
 ARG gid=2101
 
-RUN \
-  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
-  echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' > /etc/apt/sources.list.d/mongodb.list && \
-  apt-get update && \
-  apt-get install -y mongodb-org && \
-  rm -rf /var/lib/apt/lists/*
-VOLUME ["/data/db"]
-WORKDIR /data
 
-CMD ["mongod"]
-
-# Expose ports.
-#   - 27017: process
-#   - 28017: http
-EXPOSE 27017
-EXPOSE 28017
 
 
 # The luigi app is run with user `app`, uid = 2101
@@ -62,7 +47,7 @@ USER ${user}
 RUN bash -c "pyvenv /luigi/.pyenv \
     && source /luigi/.pyenv/bin/activate \
     && pip install cython \
-    && pip install boto3 boto sqlalchemy luigi pymssql psycopg2 alembic numpy pandas sklearn scipy mechanicalsoup seaborn"
+    && pip install boto3 boto sqlalchemy luigi pymssql psycopg2 alembic numpy pandas sklearn scipy pymongo urllib3 seaborn"
 
 ADD ./luigi/taskrunner.sh /luigi/
 
