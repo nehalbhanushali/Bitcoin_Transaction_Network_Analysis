@@ -1,5 +1,11 @@
 # Bitcoin_Transaction_Network_Analysis
 
+## Applying machine learning models to predict the price of bitcoin and analyze the transaction network
+
+### ABSTRACT
+In this project, we attempt to apply machine-learning algorithms to predict rise and fall in price and further predict the price of bitcoin. We have also discovered some interesting finds through exploratory data analysis and anomalies through clustering on the graph database that was preprocessed using MapReduce to identify the unique ID that makes transactions with multiple public keys
+
+
 ### Application Deployed
 
 
