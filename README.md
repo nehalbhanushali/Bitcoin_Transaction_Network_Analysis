@@ -1,4 +1,4 @@
-# Bitcoin_Transaction_Network_Analysis
+# Bitcoin Price Prediction & Transaction Network Analysis
 
 ## Applying machine learning models to predict the price of bitcoin and analyze the transaction network
 
